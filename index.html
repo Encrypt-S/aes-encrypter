@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AES Encrypter</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/bundle.js"></script>
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <h4>AES Encrypter</h4>
+        </div>
+        <form class="col s12">
+          <div class="row">
+            <div class="col s12">
+              <div class="switch" id="encrypt-switch">
+              <label>
+                  Encrypt
+                  <input type="checkbox" id="encrypt-decrypt">
+                  <span class="lever"></span>
+                  Decrypt
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <label id="textarea-label">Text to encrypt</label>
+              <textarea id="text" class="materialize-textarea"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <label>Password</label>
+              <input id="password" type="password" class="validate">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <div class="switch">
+              <label>
+                  Hide
+                  <input type="checkbox" id="toggle-password">
+                  <span class="lever"></span>
+                  Show
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6">
+              <button class="btn-large waves-effect waves-light full-width" id="submit">
+                <span>Encrypt</span>
+                <i class="material-icons right">lock</i>
+              </button>
+            </div>
+            <div class="input-field col s6">
+              <button class="btn-large waves-effect waves-light blue-grey lighten-5 full-width" id="clear-form">
+                <span class="black-text">Clear Form</span>
+                <i class="material-icons right black-text">clear</i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="col s12 hidden" id="output-container">
+          <label id="output-label">Encrypted output</label>
+          <div class="card-panel white">
+            <span class="black-text wrap" id="output-text"></span>
+          </div>
+          <a class="btn-large btn-floating waves-effect waves-light" id="copy-output" data-clipboard-target="#output-text">
+            <i class="material-icons right">content_copy</i>
+          </a>
+          <a class="btn-large btn-floating waves-effect waves-light" id="show-qr">
+            <span>QR</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="qr-modal" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <div id="qrcode"></div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" id="close-modal" class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+      </div>
+    </div>
+
+    <div id="modal-overlay"></div>
+
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="node_modules/materialize-css/js/modal.js"></script>
+  </body>
+</html>
