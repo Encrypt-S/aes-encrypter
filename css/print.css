@@ -1,0 +1,11 @@
+#screen-content {
+  display: none;
+}
+
+#print-content {
+  display: block;
+}
+
+.overflow-wrap {
+  overflow-wrap: break-word;
+}

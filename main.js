@@ -5,7 +5,7 @@ const { Menu, app } = electron;
 const BrowserWindow = electron.BrowserWindow
 
 BrowserWindow.width = 600;
-BrowserWindow.height = 800;
+BrowserWindow.height = 900;
 
 const path = require('path')
 const url = require('url')

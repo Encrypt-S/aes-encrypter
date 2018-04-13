@@ -94,6 +94,7 @@ $( document ).ready(function() {
         return
       }
       $('#output-text').text(output)
+      $('#print-output-text').text(output)
       return
     } catch(error) {
       showError('Unable to encrypt', error)
@@ -112,11 +113,21 @@ $( document ).ready(function() {
     event.preventDefault()
     $('#password').val('')
     $('#text').val('')
+    $('#title').val('')
+    $('#note').val('')
+    $('#qrcode').html('')
+    $('#print-qrcode').html('')
     $('#output-container').hide()
     $('#output-text').text('')
   })
 
   $('#show-qr').click(() => {
+    createQR()
+
+    $('#qr-modal, #modal-overlay').fadeIn()
+  })
+
+  function createQR() {
     try {
       const text = $('#output-text').text()
       const typeNumber = 0;
@@ -124,7 +135,8 @@ $( document ).ready(function() {
       const qrCode = qrcode(typeNumber, errorCorrectionLevel);
       qrCode.addData(text);
       qrCode.make();
-      $('#qrcode').html(qrCode.createImgTag(2, 8))
+      $('#qrcode').html(qrCode.createImgTag(10, 8))
+      $('#print-qrcode').html(qrCode.createImgTag(10, 8))
     } catch(error) {
       console.log(error)
       $('#qrcode').html(
@@ -133,13 +145,19 @@ $( document ).ready(function() {
         '<p>You can still copy the encrypted string and save it.</p>'
       )
     }
-
-    $('#qr-modal, #modal-overlay').fadeIn()
-  })
+  }
 
   $('.modal-close').click(() => {
     $('#qrcode').html('')
     $('#qr-modal, #modal-overlay').fadeOut()
+  })
+
+  $('#print').click(() => {
+      $('#print-title').html($('#title').val())
+      $('#print-note').html($('#note').val())
+      $('#print-output-text').html($('#output-text').text())
+      createQR()
+      window.print()
   })
 
 });
