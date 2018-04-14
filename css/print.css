@@ -9,3 +9,7 @@
 .overflow-wrap {
   overflow-wrap: break-word;
 }
+
+.pagebreak {
+  page-break-before: always;
+}

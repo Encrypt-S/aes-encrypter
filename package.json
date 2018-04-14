@@ -28,10 +28,10 @@
   "author": "craigmacgregor",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.6.2",
+    "browserify": "^14.3.0",
+    "electron": "^1.8.4",
     "electron-packager": "^8.6.0",
-    "electron-winstaller": "^2.2.0",
-    "browserify": "^14.3.0"
+    "electron-winstaller": "^2.2.0"
   },
   "dependencies": {
     "clipboard": "^1.7.1",
