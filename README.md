@@ -2,6 +2,17 @@
 
 Simple AES Encryption tool to password protect any information. It can encrypt as well as decrypt, render a QR code of the encrypted information and also print a formatted page with all the relevant data to a PDF file or printer.
 
+Inputting your private keys into third party software can be a great way to get your keys stolen by malicious actors. Please use this tool with extreme caution. Check the checksum and signature before using this software. 
+
+You or other software engineers whom you trust can review the code and compile it from source yourself. 
+
+All encryption is done locally, nothing is broadcast. This application can be used completely offline. 
+
+As an added layer of security / paranoia, you can run this software offline inside a VM or USB booted operating system (which is subsequently destroyed) to make absolutely sure it doesn't broadcast anything.
+
+
+This software is free, open source and provided under the [MIT license](https://opensource.org/licenses/MIT)
+
 ### Test data
 
 Unencrypted Data: Sometimes I eat peanut butter from the jar with a spoon
