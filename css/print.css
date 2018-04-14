@@ -1,0 +1,15 @@
+#screen-content {
+  display: none;
+}
+
+#print-content {
+  display: block;
+}
+
+.overflow-wrap {
+  overflow-wrap: break-word;
+}
+
+.pagebreak {
+  page-break-before: always;
+}
